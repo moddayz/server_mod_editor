@@ -1,0 +1,167 @@
+modded class GameConstants
+{
+	/**
+	 * \defgroup Configurations for StaminaHandler class
+	 * \desc Configurations for StaminaHandler class
+	 * @{
+	 */
+		// unit = currently percent (stamina max is 100)
+const int STAMINA_DRAIN_STANDING_SPRINT_PER_SEC = 2; // 4 в единицах (насколько спринт истощает выносливость)
+const int STAMINA_DRAIN_CROUCHED_SPRINT_PER_SEC = 1; // в единицах (сколько спринта в приседе истощает выносливость)
+const int STAMINA_DRAIN_PRONE_SPRINT_PER_SEC = 1; //3 в единицах (сколько спринта в склоне истощает выносливость)
+const int STAMINA_DRAIN_SWIM_FAST_PER_SEC = 2; //5 в единицах (насколько быстрое плавание снижает выносливость)
+const int STAMINA_DRAIN_LADDER_FAST_PER_SEC = 4; //8 в единицах (насколько быстрое восхождение по лестнице снижает выносливость)
+
+const float STAMINA_DRAIN_HOLD_BREATH = 0.1; //0.2 в единицах (насколько задержка дыхания снижает выносливость)
+const float STAMINA_DRAIN_JUMP = 15; //25 в единицах (сколько прыжков истощает выносливость)
+const float STAMINA_DRAIN_VAULT = 10; //20 в единицах (сколько прыжков истощает выносливость)
+const float STAMINA_DRAIN_CLIMB = 22; //42 в единицах (сколько прыжков истощает выносливость)
+const float STAMINA_DRAIN_MELEE_LIGHT = 3; //5 в единицах (насколько легкий рукопашный удар истощает выносливость)
+const float STAMINA_DRAIN_MELEE_HEAVY = 15; //25 в единицах (насколько тяжелый рукопашный удар истощает выносливость)
+const float STAMINA_DRAIN_MELEE_EVADE = 4; //8 в единицах (насколько уклонение уменьшает выносливость)
+
+const int STAMINA_GAIN_JOG_PER_SEC = 4; //2 в единицах (сколько единиц выносливости получено при беге трусцой)
+const int STAMINA_GAIN_WALK_PER_SEC = 6; //4 в единицах (сколько единиц выносливости набрано при ходьбе)
+const int STAMINA_GAIN_IDLE_PER_SEC = 8; //5 в единицах (сколько единиц выносливости получено во время бездействия)
+const int STAMINA_GAIN_SWIM_PER_SEC = 4; //1 в единицах (сколько единиц выносливости набрано при медленном плавании)
+const int STAMINA_GAIN_LADDER_PER_SEC = 4; //1 в единицах (сколько единиц выносливости набрано при медленном плавании)
+const float STAMINA_GAIN_BONUS_CAP = 5.0; //3 в единицах (говорит, сколько дополнительных единиц может быть добавлено в лучшем случае для восстановления выносливости)
+
+const float STAMINA_KG_TO_STAMINAPERCENT_PENALTY = 1.0; //1.75 в единицах (на сколько единиц уменьшается максимальная выносливость на каждый 1 кг веса груза)
+const float STAMINA_MIN_CAP = 5; // в единицах (перегрузка не уменьшит максимальный уровень выносливости при этом значении)
+const float STAMINA_HOLD_BREATH_THRESHOLD = 10; // в единицах
+const float STAMINA_JUMP_THRESHOLD = 15; //25 в единицах
+const float STAMINA_VAULT_THRESHOLD = 10; //20 в единицах
+const float STAMINA_CLIMB_THRESHOLD = 22; //42 в единицах
+
+
+const float STAMINA_MELEE_HEAVY_THRESHOLD = STAMINA_DRAIN_MELEE_HEAVY; // в юнитах (сколько юнитов нам нужно, чтобы сильно ударить в ближнем бою)
+const float STAMINA_MELEE_EVADE_THRESHOLD = 8; // в единицах
+const float STAMINA_REGEN_COOLDOWN_DEPLETION = 0.25; //0.45 в секундах (сколько времени мы проведем в перезарядке, прежде чем выносливость начнется с регенерации)
+const float STAMINA_REGEN_COOLDOWN_EXHAUSTION = 0.5;
+const float STAMINA_WEIGHT_LIMIT_THRESHOLD = 12000; //! в граммах (вес, когда игрок не наказан выносливостью)
+const float STAMINA_KG_TO_GRAMS = 1000; // для пересчета в кг в г
+const float STAMINA_SYNC_RATE = 1; // в секундах
+const float STAMINA_MAX = 100;
+	/** @}*/
+	
+	/**
+	 * \defgroup Configurations for Environment class
+	 * \desc Configurations for Environment class
+	 * @{
+	 */
+const float ENVIRO_TICK_RATE = 2; //! в секундах как часто должен процесс enviro effet
+const float ENVIRO_TICKS_TO_WETNESS_CALCULATION = 2; //! каждый X (галочки) обрабатывается влажностью на предметах на игрока
+const float ENVIRO_TICK_ROOF_RC_CHECK = 20; //! в секундах как часто мы должны проверять. находится ли игрок под крышей (raycast)
+const float ENVIRO_WET_INCREMENT = 0.01; //! количество влаги. добавляемое к пунктам «влажность». в каждом тике. если идет дождь
+const float ENVIRO_DRY_INCREMENT = 0.001; //! количество влаги. вычтенное из предметов. оценивает влажность каждого тика. если не идет дождь из-за тепла игрока
+const float ENVIRO_SUN_INCREMENT = 0.002; //! количество влаги. вычтенное из пунктов влажного значения каждого тика. если не идет дождь из-за солнца
+const float ENVIRO_CLOUD_DRY_EFFECT = 0.1; //! на сколько% ENVIRO_SUN_INCREMENT уменьшается из-за облачного неба
+const float ENVIRO_CLOUDS_TEMP_EFFECT = 0.1; //! на сколько% температура окружающей среды может быть снижена облаками
+const float ENVIRO_FOG_TEMP_EFFECT = 0.2; //! на сколько% температура окружающей среды может быть понижена туманом
+const float ENVIRO_WET_PENALTY = 0.9; //! при каком состоянии влажности элемента (0-1) начнется тепловая изоляция. отрицательно влияющая на тепловой комфорт элемента
+const float ENVIRO_WET_PASSTHROUGH_COEF = 0.1; //! во сколько раз медленнее смачивать / сушить предметы в рюкзаках
+const float ENVIRO_ITEM_HEAT_TRANSFER_COEF = 0.01; //! преобразует температуру предметов в прирост тепла
+const float ENVIRO_WATER_TEMPERATURE_COEF = 0.5; //! сколько раз вода холоднее воздуха
+const float ENVIRO_DEFAULT_ENTITY_HEAT = 0.5; //! Тепловой объект генерирует. если не движется
+const float ENVIRO_TEMPERATURE_HEIGHT_REDUCTION = 0.0065; //! количество? C уменьшается на каждые 100 метров высоты над уровнем воды
+const float ENVIRO_TEMPERATURE_INSIDE_COEF = 1.25; //! увеличивает темп в интерьерах
+const float ENVIRO_TEMPERATURE_UNDERROOF_COEF = 1.1;
+const float ENVIRO_WIND_EFFECT = 0.25; //! количество% ветра влияет на высыхание / смачивание
+const float ENVIRO_HIGH_NOON = 12; //! когда на небе самое высокое солнце
+
+const float ENVIRO_HEATCOMFORT_HEADPARTS_WEIGHT = 0.1; //! насколько эта часть головы (одежда) влияет на конечный тепловой комфорт
+const float ENVIRO_HEATCOMFORT_BODYPARTS_WEIGHT = 0.5; //! насколько эта часть тела (одежда) влияет на конечный тепловой комфорт
+const float ENVIRO_HEATCOMFORT_FEETPARTS_WEIGHT = 0.5; //! насколько эта часть ног (одежда) влияет на конечный тепловой комфорт
+const float ENVIRO_LOW_TEMP_LIMIT = -80; //! самая низкая температура (градус Цельсия). где игрок получает минимально возможный тепловой комфорт (-1)
+const float ENVIRO_HIGH_TEMP_LIMIT = 50; //! самая высокая температура (градус Цельсия). при которой игрок получает максимально возможный тепловой комфорт (1)
+const float ENVIRO_PLAYER_COMFORT_TEMP = 10; //! комфортная температура окружающей среды для игрока
+	
+	//! impact of item wetness to the heat isolation
+	const float ENVIRO_ISOLATION_WETFACTOR_DRY			= 1.0;
+	const float ENVIRO_ISOLATION_WETFACTOR_DAMP			= 0.75;
+	const float ENVIRO_ISOLATION_WETFACTOR_WET			= 0.5;
+	const float ENVIRO_ISOLATION_WETFACTOR_SOAKED		= 0.0;
+	const float ENVIRO_ISOLATION_WETFACTOR_DRENCHED 	= -1.0;
+	//! impact of item health (state) to the heat isolation
+	const float ENVIRO_ISOLATION_HEALTHFACTOR_PRISTINE  = 1.0;
+	const float ENVIRO_ISOLATION_HEALTHFACTOR_WORN		= 0.75;
+	const float ENVIRO_ISOLATION_HEALTHFACTOR_DAMAGED	= 0.5;
+	const float ENVIRO_ISOLATION_HEALTHFACTOR_B_DAMAGED = 0.25;
+	const float ENVIRO_ISOLATION_HEALTHFACTOR_RUINED  	= 0.0;
+	//! impact of item health (state) to absorbency
+	const float ENVIRO_ABSORBENCY_HEALTHFACTOR_PRISTINE  = 1.0;
+	const float ENVIRO_ABSORBENCY_HEALTHFACTOR_WORN		 = 0.75;
+	const float ENVIRO_ABSORBENCY_HEALTHFACTOR_DAMAGED	 = 0.5;
+	const float ENVIRO_ABSORBENCY_HEALTHFACTOR_B_DAMAGED = 0.25;
+	const float ENVIRO_ABSORBENCY_HEALTHFACTOR_RUINED  	 = 0.0;
+	/** @}*/
+	
+	/**
+	 * \defgroup Cars Fluids 
+	 * \desc Constants for car fluids
+	 * @{
+	 */
+	const int CARS_FLUIDS_TICK 		= 1;
+	const int CARS_LEAK_TICK_MIN 	= 0.02;
+	const int CARS_LEAK_TICK_MAX 	= 0.05;
+	const int CARS_LEAK_THRESHOLD	= 0.5;
+	/** @}*/
+	
+	/**
+	 * \defgroup Item Health States (ItemBase.GetHealthLevel)
+	 * \desc Constants for Item Health States
+	 * @{
+	 */
+	const int STATE_RUINED 		 	= 4;
+	const int STATE_BADLY_DAMAGED 	= 3;
+	const int STATE_DAMAGED 	  	= 2;
+	const int STATE_WORN 		  	= 1;
+	const int STATE_PRISTINE 	  	= 0;
+	/** @}*/
+		
+	/**
+	 * \defgroup Item Wetness States (ItemBase.GetWet)
+	 * \desc Constants for Item Wetness States
+	 * @{
+	 */
+	const float STATE_DRENCHED		= 0.8;
+	const float STATE_SOAKING_WET	= 0.5;
+	const float STATE_WET			= 0.25;
+	const float STATE_DAMP			= 0.05;
+	const float STATE_DRY			= 0;
+	/** @}*/
+	
+	/**
+	 * \defgroup Barel related functions constants
+	 * \desc Barel related functions constants
+	 * @{
+	 */
+	const int BAREL_LIME_PER_PELT = 100; //grams per pelt 
+	const int BAREL_BLEACH_PER_CLOTH = 50; //ml per item
+	const float BAREL_LIME_PER_PLANT = 50; //grams per gram
+	/** @}*/
+	
+	/**
+	 * \defgroup FOV settings
+	 * \desc Constats for setting of DayZPlayerCamera FOV
+	 */
+	
+	//! FOV (vertical angle/2) in radians. Take care to modify also in "basicDefines.hpp"
+	const float DZPLAYER_CAMERA_FOV_EYEZOOM		= 0.3926;	// 45deg
+	const float DZPLAYER_CAMERA_FOV_IRONSIGHTS	= 0.5236;	// 60deg
+	
+	const string DEFAULT_CHARACTER_NAME = "#str_cfgvehicles_survivor0"; //experiment, used to be "Survivor"
+	
+	const int DEFAULT_CHARACTER_MENU_ID = -1;
+	
+	const float CLEAN_UNRESTRAIN_DAMAGE = 10;
+	
+	//! Camera shake
+	const int CAMERA_SHAKE_GRENADE_DISTANCE = 40;
+	
+	//! Wood mining GameConstants, scaled by output. Should not be lower than ~1.5s!
+	const float MINING_WOOD_FAST = 2.0;
+	const float MINING_WOOD_MEDIUM = 2.0;
+	const float MINING_WOOD_SLOW = 3.0;
+}

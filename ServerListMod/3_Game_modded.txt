@@ -1,0 +1,1 @@
+//#include "$CurrentDir:\\ServerListMod\\3\\stamina.txt"
