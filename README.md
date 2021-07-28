@@ -1,3 +1,5 @@
+>>>> Editing server mods without using pbo just via a text document
+
 Place the ServerListModSIB.pbo file in the server files
 Let's move the ServerListMod folder to the server root
 
@@ -24,9 +26,9 @@ do not forget that if you want to edit some kind of code, for example a stamina,
 if you want to edit for example the player's spawn then you need 5_Mission_modded.txt
 
 
->>>>>>>>>>>>>>>>>>>>>the file is only for server folders, it cannot be put in the workshop if put I will file DMCA ^ _ ^
+>>>the file is only for server folders, it cannot be put in the workshop if put I will file DMCA ^ _ ^
 
-
+>>>>Редактирование серверных модов без использования pbo просто через текстовый документ
 
 Помещяем файл ServerListModSIB.pbo в серверные файлы
 Помешяем папку ServerListMod в корень сервера
@@ -54,4 +56,4 @@ if you want to edit for example the player's spawn then you need 5_Mission_modde
 если вы хотите отредактировать например спавн игрока то вам нужен 5_Mission_modded.txt
 
 
->>>>>>>>>>>>>>>>>>>>>файл только для папок сервера, его нельзя поместить в мастерскую, если поместите я подам DMCA ^ _ ^
+>>>файл только для папок сервера, его нельзя поместить в мастерскую, если поместите я подам DMCA ^ _ ^
