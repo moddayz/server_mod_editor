@@ -28,6 +28,8 @@ if you want to edit for example the player's spawn then you need 5_Mission_modde
 
 >>>the file is only for server folders, it cannot be put in the workshop if put I will file DMCA ^ _ ^
 
+
+>>>RUS<<<
 >>>>Редактирование серверных модов без использования pbo просто через текстовый документ
 
 Помещяем файл ServerListModSIB.pbo в серверные файлы
